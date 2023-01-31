@@ -10,8 +10,13 @@
             <div class="mb-3 row">
                 <label for="" class="col-sm-3 col-form-label">Producto</label>
                 <div class="col-sm-9">
-                    <input type="text" ngModel name="producto" class="form-control" placeholder="Nombre de producto" id="" required>
-                    <span class="form-text text-danger">Debe contener al menos 3 letras</span>
+                    <input type="text" ngModel name="producto" 
+                        class="form-control" placeholder="Nombre de producto" 
+                        id="" minlength="3" required>
+                    <span class="form-text text-danger"
+                    *ngIf="miFormulario.controls['producto']?.invalid && miFormulario.controls['producto']?.touched">
+                        Debe contener al menos 3 letras
+                    </span>
                 </div>
             </div>
 
