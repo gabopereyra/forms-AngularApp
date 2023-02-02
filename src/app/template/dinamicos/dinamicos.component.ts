@@ -12,4 +12,9 @@ export class DinamicosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  guardar(){
+    console.log('se ha hecho click en el guardar');
+  }
+
+
 }
