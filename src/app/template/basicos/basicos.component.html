@@ -10,9 +10,15 @@
             <div class="mb-3 row">
                 <label for="" class="col-sm-3 col-form-label">Producto</label>
                 <div class="col-sm-9">
-                    <input type="text" ngModel name="producto" 
-                        class="form-control" placeholder="Nombre de producto" 
-                        id="" minlength="3" required>
+                    <input 
+                        type="text" 
+                        [ngModel]="initForm.producto" 
+                        name="producto" 
+                        class="form-control" 
+                        placeholder="Nombre de producto" 
+                        id="" 
+                        minlength="3" 
+                        required>
                     <span class="form-text text-danger"
                     *ngIf="nombreValido()">
                         Debe contener al menos 3 letras
@@ -23,7 +29,12 @@
             <div class="mb-3 row">
                 <label for="" class="col-sm-3 col-form-label">Precio</label>
                 <div class="col-sm-9">
-                    <input ngModel name="precio" type="number" class="form-control" placeholder="Precio de producto" id="" required>
+                    <input 
+                        [ngModel]="initForm.precio" 
+                        name="precio" 
+                        type="number" 
+                        class="form-control" 
+                        placeholder="Precio de producto" id="" required>
                     <span class="form-text text-danger"
                     *ngIf="precioValido()">
                         Debe ser mayor a 0 (cero)
@@ -35,7 +46,7 @@
                 <label for="" class="col-sm-3 col-form-label">Existencias</label>
                 <div class="col-sm-9">
                     <input 
-                        ngModel 
+                        [ngModel]="initForm.existencias" 
                         name="existencias" 
                         type="number" 
                         class="form-control" 

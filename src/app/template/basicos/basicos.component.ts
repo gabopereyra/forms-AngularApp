@@ -9,6 +9,12 @@ import { NgForm } from '@angular/forms';
 export class BasicosComponent implements OnInit {
   @ViewChild('miFormulario') miFormulario! : NgForm;
 
+  initForm={
+    producto: "Producto ejemplo",
+    precio: 1000,
+    existencias: 10,
+  }
+
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +22,12 @@ export class BasicosComponent implements OnInit {
 
   guardar(){
     console.log(this.miFormulario);
+
+    this.miFormulario.resetForm({
+      producto: 'Sin Nombre',
+      precio: 0,
+      existencias: 0,
+    })
   }
 
   nombreValido():boolean {
