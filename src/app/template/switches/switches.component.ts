@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SwitchesComponent implements OnInit {
 
+  persona = {
+    genero: 'M',
+    notificaciones: true,
+  }
+
+  terminosYCondiciones = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }
