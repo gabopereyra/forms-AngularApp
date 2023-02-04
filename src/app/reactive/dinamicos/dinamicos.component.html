@@ -1,1 +1,68 @@
-<p>dinamicos works!</p>
+<h2>Reactive: <small>Dinámicos</small></h2>
+<hr>
+
+<form >
+    <div class="mb-3 row">
+        <!-- nombre -->
+        <label for="" class="col-sm-3 col-form-label">Nombre:</label>
+        <div class="col-sm-9">
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Nombre de la persona"
+                >
+            <span class="form-text text-danger"
+                >Este campo es obligatorio</span>
+        </div>
+    </div>
+
+    <!-- Favoritos agregar -->
+    <div class="mb-3 row">
+        <label for="" class="col-sm-3 col-form-label">Agregar</label>
+        <div class="col-sm-9">
+            <div class="input-group">
+                <input 
+                    type="text"
+                    class="form-control"
+                    placeholder="Agregar favorito"
+                    (keyup.enter)="agregarJuego()"
+                >
+                <button 
+                    type="button" 
+                    class="btn btn-outline-primary"
+                    (click)="agregarJuego()">
+                    Agregar
+                </button>
+            </div>
+        </div>        
+    </div>
+
+    <!-- Lista favoritos -->
+    <div class="mb-3 row">
+        <label for="" class="col-sm-3 col-form-label">Favoritos</label>
+        <div class="col-sm-9">
+            <!-- <div class="animate__animated animate__backInUp input-group mb-1" [ngClass]="{'animate__backOutDown' : !juego.activo}" *ngFor="let juego of persona.favoritos; let i = index">
+                <input class="form-control">  
+
+                <button 
+                    type="button" 
+                    class="btn btn-outline-danger"
+                    (click)="eliminar(i)">
+                    BORRAR
+                </button>
+            </div>       -->
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            <button 
+                class="btn btn-primary float-end"
+                type="button" 
+                (click)="guardar()">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+

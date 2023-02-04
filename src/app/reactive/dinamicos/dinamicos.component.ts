@@ -12,4 +12,16 @@ export class DinamicosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  agregarJuego(){
+
+  }
+
+  eliminar(id : any){
+
+  }
+
+  guardar(){
+    
+  }
+
 }
