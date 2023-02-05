@@ -15,7 +15,10 @@
                     placeholder="Nombre de producto"
                     formControlName="nombre"
                     id="">
-                <span class="form-text text-danger">
+                <span 
+                    class="form-text text-danger"
+                    *ngIf="campoNoValido('nombre')"
+                >
                     Debe contener al menos 3 letras
                 </span>
             </div>
@@ -30,7 +33,10 @@
                     placeholder="Precio de producto" 
                     formControlName="precio"
                     id="">
-                <span class="form-text text-danger">
+                <span 
+                    class="form-text text-danger"
+                    *ngIf="campoNoValido('precio')"
+                    >
                     Debe ser mayor a 0 (cero)
                 </span>
             </div>
@@ -46,6 +52,12 @@
                     formControlName="existencias"
                     id=""
                 >
+                <span 
+                    class="form-text text-danger"
+                    *ngIf="campoNoValido('existencias')"
+                >
+                    Debe ser mayor a 0 (cero)
+                </span>
             </div>
         </div>
 

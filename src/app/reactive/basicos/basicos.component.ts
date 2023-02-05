@@ -14,9 +14,9 @@ export class BasicosComponent implements OnInit {
   // })
 
   miFormulario : FormGroup = this.fb.group({
-    'nombre': ['Desde TS', [Validators.required, Validators.minLength(3)]],
-    'precio': [0, [Validators.required, Validators.min(0)]],
-    'existencias': [0, [Validators.required, Validators.min(0)]]
+    'nombre': [, [Validators.required, Validators.minLength(3)]],
+    'precio': [, [Validators.required, Validators.min(0)]],
+    'existencias': [, [Validators.required, Validators.min(0)]]
   })
 
   constructor(private fb : FormBuilder) { }
@@ -24,4 +24,7 @@ export class BasicosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  campoNoValido( campo : string ){
+    return this.miFormulario.controls[campo].errors && this.miFormulario.controls[campo].touched;
+  }
 }
