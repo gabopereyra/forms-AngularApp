@@ -1,8 +1,10 @@
 <h2>Reactive: <small>Dinámicos</small></h2>
 <hr>
 
-<form >
-    <div class="mb-3 row">
+<form         
+    [formGroup]="miFormulario"
+    (ngSubmit)="guardar()">
+    <div class="mb-3 row" >
         <!-- nombre -->
         <label for="" class="col-sm-3 col-form-label">Nombre:</label>
         <div class="col-sm-9">
@@ -10,9 +12,11 @@
                 type="text" 
                 class="form-control" 
                 placeholder="Nombre de la persona"
+                formControlName="nombre"
                 >
-            <span class="form-text text-danger"
-                >Este campo es obligatorio</span>
+            <span 
+                class="form-text text-danger" 
+                *ngIf="campoNoValido('nombre')">Debe tener una longitud de al menos 3 caracteres.</span>
         </div>
     </div>
 
@@ -58,8 +62,7 @@
         <div class="col">
             <button 
                 class="btn btn-primary float-end"
-                type="button" 
-                (click)="guardar()">
+                type="submit" >
                 Guardar
             </button>
         </div>
