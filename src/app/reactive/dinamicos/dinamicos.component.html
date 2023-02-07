@@ -44,7 +44,17 @@
     <!-- Lista favoritos -->
     <div class="mb-3 row">
         <label for="" class="col-sm-3 col-form-label">Favoritos</label>
-        <div class="col-sm-9">
+        <div class="col-sm-9" formArrayName='favoritos'>
+            <div class="input-group mb-1"
+                *ngFor="let favorito of favoritosArray.controls; let i = index"
+            >
+                <input class="form-control"
+                    [formControlName]="i"
+                >
+                <button class="btn btn-outline-danger">Eliminar</button>
+            </div>
+
+
             <!-- <div class="animate__animated animate__backInUp input-group mb-1" [ngClass]="{'animate__backOutDown' : !juego.activo}" *ngFor="let juego of persona.favoritos; let i = index">
                 <input class="form-control">  
 
@@ -68,4 +78,18 @@
         </div>
     </div>
 </form>
+
+
+<div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{ miFormulario.valid }}</pre>
+        <span>Pristine</span>
+        <pre>{{ miFormulario.pristine }}</pre>
+        <span>Touched</span>
+        <pre>{{ miFormulario.touched }}</pre>
+        <span>Value</span>
+        <pre>{{ miFormulario.value | json}}</pre>
+    </div>
+</div>
 
