@@ -16,6 +16,8 @@ export class DinamicosComponent implements OnInit {
     ], Validators.required)
   })
 
+  nuevoFavorito = this.fb.control('', Validators.required);
+
   constructor(private fb : FormBuilder) { }
 
   ngOnInit(): void {
@@ -30,7 +32,13 @@ export class DinamicosComponent implements OnInit {
   }
 
   agregarJuego(){
+    if(this.nuevoFavorito.invalid) return;
 
+    let control = this.fb.control(this.nuevoFavorito.value);
+
+    this.favoritosArray.push(control);
+
+    this.nuevoFavorito.reset();
   }
 
   eliminar(id : any){

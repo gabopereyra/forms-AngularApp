@@ -28,6 +28,7 @@
                 <input 
                     type="text"
                     class="form-control"
+                    [formControl] = "nuevoFavorito"
                     placeholder="Agregar favorito"
                     (keyup.enter)="agregarJuego()"
                 >
