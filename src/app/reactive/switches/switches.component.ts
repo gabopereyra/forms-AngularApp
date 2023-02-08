@@ -23,6 +23,19 @@ export class SwitchesComponent implements OnInit {
 
   ngOnInit(): void {
     this.miFormulario.reset(this.persona);
+
+    this.miFormulario.valueChanges.subscribe( ({condiciones, ...rest}) =>{
+      this.persona = rest;
+    })
+  }
+
+  guardar(){
+    const form = {...this.miFormulario.value}
+
+    delete form.condiciones;
+
+    this.persona = form;
+
   }
 
 }

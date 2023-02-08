@@ -1,5 +1,5 @@
 <h2>Reactive: <small>Switches</small></h2>
-<form [formGroup]="miFormulario">
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
     <div class="row mb-3">
         <label class="col-sm-3 col-form-label">Género</label>
 
@@ -66,7 +66,9 @@
 
     <div class="row">
         <div class="col">
-            <button class="btn btn-primary float-end">Guardar</button>
+            <button class="btn btn-primary float-end" type="submit">
+                Guardar
+            </button>
         </div>
     </div>
 
