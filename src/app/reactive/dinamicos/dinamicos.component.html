@@ -46,13 +46,17 @@
     <div class="mb-3 row">
         <label for="" class="col-sm-3 col-form-label">Favoritos</label>
         <div class="col-sm-9" formArrayName='favoritos'>
-            <div class="input-group mb-1"
+            <div class="animate__animated animate__backInUp input-group mb-1"
                 *ngFor="let favorito of favoritosArray.controls; let i = index"
             >
                 <input class="form-control"
                     [formControlName]="i"
                 >
-                <button class="btn btn-outline-danger">Eliminar</button>
+                <button 
+                    class="btn btn-outline-danger"
+                    (click)="borrarFavorito(i)">
+                    Eliminar
+                </button>
             </div>
 
 
