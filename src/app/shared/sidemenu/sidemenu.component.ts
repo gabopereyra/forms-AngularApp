@@ -41,6 +41,16 @@ public reactiveMenu : MenuItem[] = [
   },
 ];
 
+public authMenu : MenuItem[] = [
+  {
+    texto: 'Registro',
+    ruta: './auth/registro'
+  },
+  {
+    texto: 'Login',
+    ruta: './auth/login'
+  }
+];
   constructor() { }
 
   ngOnInit(): void {
