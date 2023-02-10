@@ -26,7 +26,14 @@
                 <div class="col-sm-9">
                     <input type="email" 
                     class="form-control"
+                    formControlName="email"
                     placeholder="Email del usuario">
+                    <span 
+                    *ngIf="campoNoValido('email')"
+                    class="form-text text-danger"
+                >
+                    El formato del email no es valido
+                </span>
                 </div>
             </div>
 
