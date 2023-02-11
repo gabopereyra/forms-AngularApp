@@ -10,9 +10,14 @@ import { ValidatorService } from 'src/app/shared/validators/validator.service';
 export class RegistroComponent implements OnInit {
 
   miForm : FormGroup = this.fb.group({
-    nombre: ['', [Validators.required, Validators.pattern(this.vs.emailPattern)]],
+    nombre: ['', [Validators.required, Validators.pattern(this.vs.patternNombre)]],
     email: ['', [Validators.required, Validators.pattern(this.vs.emailPattern)]],
-    username: ['', [Validators.required, this.vs.adminNO]]
+    username: ['', [Validators.required, this.vs.adminNO]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    password2: ['', [Validators.required]]
+  },
+  {
+    validators: [this.vs.camposIguales('password', 'password2')] 
   }) 
 
 
@@ -22,6 +27,12 @@ export class RegistroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.miForm.reset({
+      nombre: "nombre apellido",
+      email: "mail@mail.com",
+      username: "username",
+      }
+    )
   }
 
   campoNoValido(campo : string){
