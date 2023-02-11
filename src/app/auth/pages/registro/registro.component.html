@@ -43,7 +43,14 @@
                 <div class="col-sm-9">
                     <input type="email" 
                     class="form-control"
+                    formControlName="username"
                     placeholder="Username">
+                    <span 
+                    *ngIf="campoNoValido('username')"
+                    class="form-text text-danger"
+                >
+                    El username no puede ser admin
+                </span>
                 </div>
             </div>
 
@@ -76,4 +83,11 @@
     </div>
 </div>
 
-<h2>Form Valid: {{miForm.valid}}</h2>
+<h5>Form Valid: {{miForm.valid}}</h5>
+<h5>Nombre</h5>
+<pre>{{miForm.controls['nombre'].errors | json}}</pre>
+<h5>Email</h5>
+<pre>{{miForm.controls['email'].errors | json}}</pre>
+<h5>Username</h5>
+<pre>{{miForm.controls['username'].errors | json}}</pre>
+<h5></h5>
