@@ -28,12 +28,9 @@
                     class="form-control"
                     formControlName="email"
                     placeholder="Email del usuario">
-                    <span 
-                    *ngIf="campoNoValido('email')"
-                    class="form-text text-danger"
-                >
-                    El formato del email no es valido
-                </span>
+                    <span  *ngIf="campoNoValido('email')" class="form-text text-danger">
+                        {{ errorEmail }}
+                    </span>
                 </div>
             </div>
 
@@ -90,7 +87,11 @@
 
             <div class="row">
                 <div class="col">
-                    <button type="submit" class="btn btn-primary float-end">Crear</button>
+                    <button 
+                        type="submit" 
+                        class="btn btn-primary float-end"
+                        [disabled]="miForm.pending">
+                    >Crear</button>
                 </div>
             </div>
         </form>
